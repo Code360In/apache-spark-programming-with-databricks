@@ -43,13 +43,13 @@ display(df)
 # MAGIC 
 # MAGIC | Method | Description |
 # MAGIC | --- | --- |
-# MAGIC | add_months | Returns the date that is numMonths after startDate |
-# MAGIC | current_timestamp | Returns the current timestamp at the start of query evaluation as a timestamp column |
-# MAGIC | date_format | Converts a date/timestamp/string to a value of string in the format specified by the date format given by the second argument. |
-# MAGIC | dayofweek | Extracts the day of the month as an integer from a given date/timestamp/string |
-# MAGIC | from_unixtime | Converts the number of seconds from unix epoch (1970-01-01 00:00:00 UTC) to a string representing the timestamp of that moment in the current system time zone in the yyyy-MM-dd HH:mm:ss format |
-# MAGIC | minute | Extracts the minutes as an integer from a given date/timestamp/string. |
-# MAGIC | unix_timestamp | Converts time string with given pattern to Unix timestamp (in seconds) |
+# MAGIC | **`add_months`** | Returns the date that is numMonths after startDate |
+# MAGIC | **`current_timestamp`** | Returns the current timestamp at the start of query evaluation as a timestamp column |
+# MAGIC | **`date_format`** | Converts a date/timestamp/string to a value of string in the format specified by the date format given by the second argument. |
+# MAGIC | **`dayofweek`** | Extracts the day of the month as an integer from a given date/timestamp/string |
+# MAGIC | **`from_unixtime`** | Converts the number of seconds from unix epoch (1970-01-01 00:00:00 UTC) to a string representing the timestamp of that moment in the current system time zone in the yyyy-MM-dd HH:mm:ss format |
+# MAGIC | **`minute`** | Extracts the minutes as an integer from a given date/timestamp/string. |
+# MAGIC | **`unix_timestamp`** | Converts time string with given pattern to Unix timestamp (in seconds) |
 
 # COMMAND ----------
 
@@ -57,7 +57,7 @@ display(df)
 
 # COMMAND ----------
 
-# MAGIC %md #### `cast()`
+# MAGIC %md #### **`cast()`**
 # MAGIC Casts column to a different data type, specified using string representation or DataType.
 
 # COMMAND ----------
@@ -100,7 +100,7 @@ display(timestamp_df)
 
 # COMMAND ----------
 
-# MAGIC %md #### `date_format()`
+# MAGIC %md #### **`date_format()`**
 # MAGIC Converts a date/timestamp/string to a string formatted with the given date time pattern.
 
 # COMMAND ----------
@@ -119,7 +119,7 @@ display(formatted_df)
 
 # COMMAND ----------
 
-# MAGIC %md #### `year`
+# MAGIC %md #### **`year`**
 # MAGIC Extracts the year as an integer from a given date/timestamp/string.
 # MAGIC 
 # MAGIC ##### Similar methods: `month`, `dayofweek`, `minute`, `second`, etc.
@@ -143,7 +143,7 @@ display(datetime_df)
 
 # COMMAND ----------
 
-# MAGIC %md #### `to_date`
+# MAGIC %md #### **`to_date`**
 # MAGIC Converts the column into DateType by casting rules to DateType.
 
 # COMMAND ----------
@@ -159,7 +159,7 @@ display(date_df)
 
 # COMMAND ----------
 
-# MAGIC %md #### `date_add`
+# MAGIC %md #### **`date_add`**
 # MAGIC Returns the date that is the given number of days after start
 
 # COMMAND ----------

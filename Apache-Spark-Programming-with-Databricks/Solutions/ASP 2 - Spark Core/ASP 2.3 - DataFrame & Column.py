@@ -66,7 +66,7 @@ print(col("device"))
 # MAGIC | Method | Description |
 # MAGIC | --- | --- |
 # MAGIC | \*, + , <, >= | Math and comparison operators |
-# MAGIC | ==, != | Equality and inequality tests (Scala operators are `===` and `=!=`) |
+# MAGIC | ==, != | Equality and inequality tests (Scala operators are **`===`** and **`=!=`**) |
 # MAGIC | alias | Gives the column an alias |
 # MAGIC | cast, astype | Casts the column to a different data type |
 # MAGIC | isNull, isNotNull, isNan | Is null, is not null, is NaN |
@@ -103,15 +103,15 @@ display(rev_df)
 # MAGIC %md ## DataFrame Transformation Methods
 # MAGIC | Method | Description |
 # MAGIC | --- | --- |
-# MAGIC | select | Returns a new DataFrame by computing given expression for each element |
-# MAGIC | drop | Returns a new DataFrame with a column dropped |
-# MAGIC | withColumnRenamed | Returns a new DataFrame with a column renamed |
-# MAGIC | withColumn | Returns a new DataFrame by adding a column or replacing the existing column that has the same name |
-# MAGIC | filter, where | Filters rows using the given condition |
-# MAGIC | sort, orderBy | Returns a new DataFrame sorted by the given expressions |
-# MAGIC | dropDuplicates, distinct | Returns a new DataFrame with duplicate rows removed |
-# MAGIC | limit | Returns a new DataFrame by taking the first n rows |
-# MAGIC | groupBy | Groups the DataFrame using the specified columns, so we can run aggregation on them |
+# MAGIC | **`select`** | Returns a new DataFrame by computing given expression for each element |
+# MAGIC | **`drop`** | Returns a new DataFrame with a column dropped |
+# MAGIC | **`withColumnRenamed`** | Returns a new DataFrame with a column renamed |
+# MAGIC | **`withColumn`** | Returns a new DataFrame by adding a column or replacing the existing column that has the same name |
+# MAGIC | **`filter`**, **`where`** | Filters rows using the given condition |
+# MAGIC | **`sort`**, **`orderBy`** | Returns a new DataFrame sorted by the given expressions |
+# MAGIC | **`dropDuplicates`**, **`distinct`** | Returns a new DataFrame with duplicate rows removed |
+# MAGIC | **`limit`** | Returns a new DataFrame by taking the first n rows |
+# MAGIC | **`groupBy`** | Groups the DataFrame using the specified columns, so we can run aggregation on them |
 
 # COMMAND ----------
 
@@ -120,7 +120,7 @@ display(rev_df)
 
 # COMMAND ----------
 
-# MAGIC %md #### `select()`
+# MAGIC %md #### **`select()`**
 # MAGIC Selects a list of columns or column based expressions
 
 # COMMAND ----------
@@ -141,7 +141,7 @@ display(locations_df)
 
 # COMMAND ----------
 
-# MAGIC %md #### `selectExpr()`
+# MAGIC %md #### **`selectExpr()`**
 # MAGIC Selects a list of SQL expressions
 
 # COMMAND ----------
@@ -151,7 +151,7 @@ display(apple_df)
 
 # COMMAND ----------
 
-# MAGIC %md #### `drop()`
+# MAGIC %md #### **`drop()`**
 # MAGIC Returns a new DataFrame after dropping the given column, specified as a string or Column object
 # MAGIC 
 # MAGIC Use strings to specify multiple columns
@@ -174,7 +174,8 @@ display(no_sales_df)
 
 # COMMAND ----------
 
-# MAGIC %md #### `withColumn()`
+# MAGIC %md 
+# MAGIC #### **`withColumn()`**
 # MAGIC Returns a new DataFrame by adding a column or replacing an existing column that has the same name.
 
 # COMMAND ----------
@@ -189,7 +190,7 @@ purchase_quantity_df.printSchema()
 
 # COMMAND ----------
 
-# MAGIC %md #### `withColumnRenamed()`
+# MAGIC %md #### **`withColumnRenamed()`**
 # MAGIC Returns a new DataFrame with a column renamed.
 
 # COMMAND ----------
@@ -204,7 +205,7 @@ display(location_df)
 
 # COMMAND ----------
 
-# MAGIC %md #### `filter()`
+# MAGIC %md #### **`filter()`**
 # MAGIC Filters rows using the given SQL expression or column based condition.
 
 # COMMAND ----------
@@ -224,14 +225,14 @@ display(android_df)
 
 # COMMAND ----------
 
-# MAGIC %md #### `dropDuplicates()`
+# MAGIC %md #### **`dropDuplicates()`**
 # MAGIC Returns a new DataFrame with duplicate rows removed, optionally considering only a subset of columns.
 # MAGIC 
 # MAGIC ##### Alias: `distinct`
 
 # COMMAND ----------
 
-events_df.distinct()
+display(events_df.distinct())
 
 # COMMAND ----------
 
@@ -240,7 +241,7 @@ display(distinct_users_df)
 
 # COMMAND ----------
 
-# MAGIC %md #### `limit()`
+# MAGIC %md #### **`limit()`**
 # MAGIC Returns a new DataFrame by taking the first n rows.
 
 # COMMAND ----------
@@ -255,10 +256,10 @@ display(limit_df)
 
 # COMMAND ----------
 
-# MAGIC %md #### `sort()`
+# MAGIC %md #### **`sort()`**
 # MAGIC Returns a new DataFrame sorted by the given columns or expressions.
 # MAGIC 
-# MAGIC ##### Alias: `orderBy`
+# MAGIC ##### Alias: **`orderBy`**
 
 # COMMAND ----------
 

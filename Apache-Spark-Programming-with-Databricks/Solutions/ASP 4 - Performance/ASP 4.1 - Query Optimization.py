@@ -147,7 +147,7 @@ pp_df = (spark
          .filter(col("gender") == "M")   # Filter the data by gender
         )
 
-pp_df.explain()
+pp_df.explain(True)
 
 # COMMAND ----------
 
@@ -176,7 +176,7 @@ cached_df = (spark
 cached_df.cache()
 filtered_df = cached_df.filter(col("gender") == "M")
 
-filtered_df.explain()
+filtered_df.explain(True)
 
 # COMMAND ----------
 

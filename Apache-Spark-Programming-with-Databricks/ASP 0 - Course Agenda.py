@@ -17,16 +17,16 @@
 # MAGIC # Day 1 
 # MAGIC ## Introductions
 # MAGIC * [ASP 1.1 - Databricks Platform]($./ASP 1 - Introductions/ASP 1.1 - Databricks Platform)
-# MAGIC * [ASP 1.1L - Explore Datasets Lab]($./ASP 1 - Introductions/Labs/ASP 1.1L - Explore Datasets Lab)
+# MAGIC * [ASP 1.1L - Explore Datasets Lab]($./ASP 1 - Introductions/ASP 1.1L - Explore Datasets Lab)
 # MAGIC 
 # MAGIC 
 # MAGIC ## Spark Core
 # MAGIC * [ASP 2.1 - Spark SQL]($./ASP 2 - Spark Core/ASP 2.1 - Spark SQL)
-# MAGIC * [ASP 2.1L - Spark SQL Lab]($./ASP 2 - Spark Core/Labs/ASP 2.1L - Spark SQL Lab)
+# MAGIC * [ASP 2.1L - Spark SQL Lab]($./ASP 2 - Spark Core/ASP 2.1L - Spark SQL Lab)
 # MAGIC * [ASP 2.2 - Reader & Writer]($./ASP 2 - Spark Core/ASP 2.2 - Reader & Writer)
-# MAGIC * [ASP 2.2L - Ingesting Data Lab]($./ASP 2 - Spark Core/Labs/ASP 2.2L - Ingesting Data Lab)
+# MAGIC * [ASP 2.2L - Ingesting Data Lab]($./ASP 2 - Spark Core/ASP 2.2L - Ingesting Data Lab)
 # MAGIC * [ASP 2.3 - DataFrame & Column]($./ASP 2 - Spark Core/ASP 2.3 - DataFrame & Column)
-# MAGIC * [ASP 2.3L - Purchase Revenues Lab]($./ASP 2 - Spark Core/Labs/ASP 2.3L - Purchase Revenues Lab)
+# MAGIC * [ASP 2.3L - Purchase Revenues Lab]($./ASP 2 - Spark Core/ASP 2.3L - Purchase Revenues Lab)
 
 # COMMAND ----------
 
@@ -34,14 +34,14 @@
 # MAGIC # Day 2
 # MAGIC ## Functions
 # MAGIC * [ASP 3.1 - Aggregation]($./ASP 3 - Functions/ASP 3.1 - Aggregation)
-# MAGIC * [ASP 3.1L - Revenue by Traffic Lab]($./ASP 3 - Functions/Labs/ASP 3.1L - Revenue by Traffic Lab)
+# MAGIC * [ASP 3.1L - Revenue by Traffic Lab]($./ASP 3 - Functions/ASP 3.1L - Revenue by Traffic Lab)
 # MAGIC * [ASP 3.2 - Datetimes]($./ASP 3 - Functions/ASP 3.2 - Datetimes)
-# MAGIC * [ASP 3.2L - Active Users Lab]($./ASP 3 - Functions/Labs/ASP 3.2L - Active Users Lab)
+# MAGIC * [ASP 3.2L - Active Users Lab]($./ASP 3 - Functions/ASP 3.2L - Active Users Lab)
 # MAGIC * [ASP 3.3 - Complex Types]($./ASP 3 - Functions/ASP 3.3 - Complex Types)
 # MAGIC * [ASP 3.4 - Additional Functions]($./ASP 3 - Functions/ASP 3.4 - Additional Functions)
-# MAGIC * [ASP 3.4L - Abandoned Carts Lab]($./ASP 3 - Functions/Labs/ASP 3.4L - Abandoned Carts Lab)
+# MAGIC * [ASP 3.4L - Abandoned Carts Lab]($./ASP 3 - Functions/ASP 3.4L - Abandoned Carts Lab)
 # MAGIC * [ASP 3.5 - UDFs]($./ASP 3 - Functions/ASP 3.5 - UDFs)
-# MAGIC * [ASP 3.5L - Sort Day Lab]($./ASP 3 - Functions/Labs/ASP 3.5L - Sort Day Lab)
+# MAGIC * [ASP 3.5L - Sort Day Lab]($./ASP 3 - Functions/ASP 3.5L - Sort Day Lab)
 # MAGIC   
 
 # COMMAND ----------
@@ -51,7 +51,7 @@
 # MAGIC ## Performance
 # MAGIC * [ASP 4.1 - Query Optimization]($./ASP 4 - Performance/ASP 4.1 - Query Optimization)
 # MAGIC * [ASP 4.2 - Partitioning]($./ASP 4 - Performance/ASP 4.2 - Partitioning)
-# MAGIC * [ASP 4.3L - De-Duping Data Lab]($./ASP 4 - Performance/Labs/ASP 4.3L - De-Duping Data Lab)
+# MAGIC * [ASP 4.2L - De-Duping Data Lab]($./ASP 4 - Performance/ASP 4.2L - De-Duping Data Lab)
 
 # COMMAND ----------
 
@@ -59,14 +59,14 @@
 # MAGIC # Day 4
 # MAGIC ## Streaming
 # MAGIC * [ASP 5.1 - Streaming Query]($./ASP 5 - Streaming/ASP 5.1 - Streaming Query)
-# MAGIC * [ASP 5.1L - Coupon Sales Lab]($./ASP 5 - Streaming/Labs/ASP 5.1L - Coupon Sales Lab)
-# MAGIC * [ASP 5.2L - Hourly Activity by Traffic Lab]($./ASP 5 - Streaming/Labs/ASP 5.2L - Hourly Activity by Traffic Lab)
-# MAGIC * [ASP 5.3L - Activity by Traffic Lab]($./ASP 5 - Streaming/Labs/ASP 5.3L - Activity by Traffic Lab)
+# MAGIC * [ASP 5.1aL - Coupon Sales Lab]($./ASP 5 - Streaming/ASP 5.1aL - Coupon Sales Lab)
+# MAGIC * [ASP 5.1bL - Hourly Activity by Traffic Lab]($./ASP 5 - Streaming/ASP 5.1bL - Hourly Activity by Traffic Lab)
+# MAGIC * [ASP 5.1cL - Activity by Traffic Lab]($./ASP 5 - Streaming/ASP 5.1cL - Activity by Traffic Lab)
 # MAGIC 
 # MAGIC 
 # MAGIC ## Delta Lake
 # MAGIC * [ASP 6.1 - Delta Lake]($./ASP 6 - Delta Lake/ASP 6.1 - Delta Lake)
-# MAGIC * [ASP 6.1L - Delta Lake Lab]($./ASP 6 - Delta Lake/Labs/ASP 6.1L - Delta Lake Lab)
+# MAGIC * [ASP 6.1L - Delta Lake Lab]($./ASP 6 - Delta Lake/ASP 6.1L - Delta Lake Lab)
 
 # COMMAND ----------
 

@@ -59,7 +59,7 @@ events_df.write.format("delta").mode("overwrite").saveAsTable("delta_events")
 
 # MAGIC %md As with other file formats, Delta supports partitioning your data in storage using the unique values in a specified column (often referred to as "Hive partitioning").
 # MAGIC 
-# MAGIC Let's **overwrite** the Delta dataset in the `delta_path` directory to partition by state. This can accelerate queries that filter by state.
+# MAGIC Let's **overwrite** the Delta dataset in the **`delta_path`** directory to partition by state. This can accelerate queries that filter by state.
 
 # COMMAND ----------
 

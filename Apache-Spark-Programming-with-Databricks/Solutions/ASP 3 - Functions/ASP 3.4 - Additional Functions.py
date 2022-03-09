@@ -24,6 +24,14 @@
 
 # COMMAND ----------
 
+# MAGIC %run ../Includes/Classroom-Setup
+
+# COMMAND ----------
+
+from pyspark.sql.functions import *
+
+# COMMAND ----------
+
 # MAGIC %md ### DataFrameNaFunctions
 # MAGIC <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrameNaFunctions.html" target="_blank">DataFrameNaFunctions</a> is a DataFrame submodule with methods for handling null values. Obtain an instance of DataFrameNaFunctions by accessing the **`na`** attribute of a DataFrame.
 # MAGIC 
@@ -32,6 +40,21 @@
 # MAGIC | drop | Returns a new DataFrame omitting rows with any, all, or a specified number of null values, considering an optional subset of columns |
 # MAGIC | fill | Replace null values with the specified value for an optional subset of columns |
 # MAGIC | replace | Returns a new DataFrame replacing a value with another value, considering an optional subset of columns |
+
+# COMMAND ----------
+
+sales_df = spark.read.format("delta").load(sales_path)
+display(sales_df)
+
+# COMMAND ----------
+
+# MAGIC %md Let's say we need to remove the email addresses from our dataset. 
+
+# COMMAND ----------
+
+no_pii_df = sales_df.drop("email")
+
+display(no_pii_df)
 
 # COMMAND ----------
 
@@ -44,6 +67,16 @@
 # MAGIC | lit | Creates a Column of literal value |
 # MAGIC | isnull | Return true iff the column is null |
 # MAGIC | rand | Generate a random column with independent and identically distributed (i.i.d.) samples uniformly distributed in [0.0, 1.0) |
+
+# COMMAND ----------
+
+# MAGIC %md We could select a particular column using the **`col`** function
+
+# COMMAND ----------
+
+gmail_accounts = sales_df.filter(col("email").contains("gmail"))
+
+display(gmail_accounts)
 
 # COMMAND ----------
 

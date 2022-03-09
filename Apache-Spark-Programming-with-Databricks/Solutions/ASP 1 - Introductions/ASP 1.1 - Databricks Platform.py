@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md 
+# MAGIC %md
 # MAGIC # Databricks Platform
 # MAGIC 
 # MAGIC Demonstrate basic functionality and identify terms related to working in the Databricks workspace.
@@ -24,13 +24,13 @@
 # MAGIC 
 # MAGIC ##### Databricks Notebook Utilities
 # MAGIC - <a href="https://docs.databricks.com/notebooks/notebooks-use.html#language-magic" target="_blank">Magic commands</a>: **`%python`**, **`%scala`**, **`%sql`**, **`%r`**, **`%sh`**, **`%md`**
-# MAGIC - <a href="https://docs.databricks.com/dev-tools/databricks-utils.html" target="_blank">DBUtils</a>: **`dbutils.fs`** **(`%fs`)**, **`dbutils.notebooks`** **(`%run`)**, **`dbutils.widgets`**
+# MAGIC - <a href="https://docs.databricks.com/dev-tools/databricks-utils.html" target="_blank">DBUtils</a>: **`dbutils.fs`** (**`%fs`**), **`dbutils.notebooks`** (**`%run`**), **`dbutils.widgets`**
 # MAGIC - <a href="https://docs.databricks.com/notebooks/visualizations/index.html" target="_blank">Visualization</a>: **`display`**, **`displayHTML`**
 
 # COMMAND ----------
 
 # MAGIC %md ### Setup
-# MAGIC Run classroom setup to [mount](https://docs.databricks.com/data/databricks-file-system.html#mount-storage) Databricks training datasets and create your own database for BedBricks.
+# MAGIC Run classroom setup to <a href="https://docs.databricks.com/data/databricks-file-system.html#mount-storage" target="_blank">mount</a> Databricks training datasets and create your own database for BedBricks.
 # MAGIC 
 # MAGIC Use the **`%run`** magic command to run another notebook within a notebook
 
@@ -92,7 +92,7 @@ displayHTML(html)
 
 # MAGIC %md
 # MAGIC ## Create documentation cells
-# MAGIC Render cell as <a href="https://www.markdownguide.org/cheat-sheet/" target="_blank">Markdown</a> using the magic command: **`%md`**  
+# MAGIC Render cell as <a href="https://www.markdownguide.org/cheat-sheet/" target="_blank">Markdown</a> using the magic command: **`%md`**
 # MAGIC 
 # MAGIC Below are some examples of how you can use Markdown to format documentation. Click this cell and press **`Enter`** to view the underlying Markdown syntax.
 # MAGIC 
@@ -107,7 +107,7 @@ displayHTML(html)
 # MAGIC 
 # MAGIC ---
 # MAGIC 
-# MAGIC - [link](https://www.markdownguide.org/cheat-sheet/)
+# MAGIC - <a href="https://www.markdownguide.org/cheat-sheet/" target="_blank">link</a>
 # MAGIC - `code`
 # MAGIC 
 # MAGIC ```
@@ -169,7 +169,7 @@ displayHTML(html)
 
 # COMMAND ----------
 
-# MAGIC %md 
+# MAGIC %md
 # MAGIC Run file system commands on DBFS using DBUtils directly
 
 # COMMAND ----------
@@ -219,7 +219,7 @@ spark.sql(f"SET c.events_path = {events_path}")
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC CREATE TABLE IF NOT EXISTS events USING delta OPTIONS (path "${c.events_path}");
+# MAGIC CREATE TABLE IF NOT EXISTS events USING DELTA OPTIONS (path "${c.events_path}");
 
 # COMMAND ----------
 

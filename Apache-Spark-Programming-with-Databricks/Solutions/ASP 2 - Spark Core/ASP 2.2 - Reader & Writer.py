@@ -7,10 +7,6 @@
 
 # COMMAND ----------
 
-
-
-# COMMAND ----------
-
 # MAGIC %md # Reader & Writer
 # MAGIC ##### Objectives
 # MAGIC 1. Read from CSV files
@@ -204,7 +200,7 @@ spark.conf.set("com.whatever.your_scope.events_path", events_json_path)
 # MAGIC // Step 2 - pull the value from the config (or copy & paste it)
 # MAGIC val eventsJsonPath = spark.conf.get("com.whatever.your_scope.events_path")
 # MAGIC 
-# MAGIC // Step 3 - Read in the JSON, but let it infer the scmea
+# MAGIC // Step 3 - Read in the JSON, but let it infer the schema
 # MAGIC val eventsSchema = spark.read
 # MAGIC                         .option("inferSchema", true)
 # MAGIC                         .json(eventsJsonPath)
@@ -243,13 +239,14 @@ display(events_df)
 # MAGIC %md ## DataFrameWriter
 # MAGIC Interface used to write a DataFrame to external storage systems
 # MAGIC 
-# MAGIC ```
-# MAGIC (df.write                         
-# MAGIC   .option("compression", "snappy")
-# MAGIC   .mode("overwrite")      
-# MAGIC   .parquet(output_dir)       
+# MAGIC <strong><code>
+# MAGIC (df  
+# MAGIC &nbsp;  .write                         
+# MAGIC &nbsp;  .option("compression", "snappy")  
+# MAGIC &nbsp;  .mode("overwrite")      
+# MAGIC &nbsp;  .parquet(output_dir)       
 # MAGIC )
-# MAGIC ```
+# MAGIC </code></strong>
 # MAGIC 
 # MAGIC DataFrameWriter is accessible through the SparkSession attribute **`write`**. This class includes methods to write DataFrames to different external storage systems.
 
