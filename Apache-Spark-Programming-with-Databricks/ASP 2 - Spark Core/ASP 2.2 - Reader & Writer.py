@@ -320,7 +320,7 @@ print(database_name)
 # MAGIC 
 # MAGIC #### Delta Lake's Key Features
 # MAGIC - ACID transactions
-# MAGIC - Scalable metadata handline
+# MAGIC - Scalable metadata handling
 # MAGIC - Unified streaming and batch processing
 # MAGIC - Time travel (data versioning)
 # MAGIC - Schema enforcement and evolution

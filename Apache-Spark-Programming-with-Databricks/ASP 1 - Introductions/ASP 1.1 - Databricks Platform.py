@@ -161,7 +161,7 @@ displayHTML(html)
 
 # COMMAND ----------
 
-# MAGIC %md `%fs` is shorthand for the <a href="https://docs.databricks.com/dev-tools/databricks-utils.html" target="_blank">DBUtils</a> module: **`dbutils.fs`**
+# MAGIC %md **`%fs`** is shorthand for the <a href="https://docs.databricks.com/dev-tools/databricks-utils.html" target="_blank">DBUtils</a> module: **`dbutils.fs`**
 
 # COMMAND ----------
 
@@ -219,7 +219,9 @@ spark.sql(f"SET c.events_path = {events_path}")
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC CREATE TABLE IF NOT EXISTS events USING DELTA OPTIONS (path "${c.events_path}");
+# MAGIC CREATE TABLE IF NOT EXISTS events
+# MAGIC USING DELTA
+# MAGIC OPTIONS (path = "${c.events_path}");
 
 # COMMAND ----------
 

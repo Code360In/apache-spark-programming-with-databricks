@@ -20,15 +20,6 @@ display(df)
 
 # COMMAND ----------
 
-details_df = (df
-              .withColumn("items", explode("items"))
-              .select("email", "items.item_name")
-              .withColumn("details", split(col("item_name"), " "))
-             )
-display(details_df)
-
-# COMMAND ----------
-
 # MAGIC %md ### 1. Extract item details from purchases
 # MAGIC 
 # MAGIC - Explode the **`items`** field in **`df`** with the results replacing the existing **`items`** field

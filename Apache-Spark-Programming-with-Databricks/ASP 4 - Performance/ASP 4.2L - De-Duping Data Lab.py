@@ -51,7 +51,7 @@
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC It's helpful to look at the file first, so you can check the format with `dbutils.fs.head()`.
+# MAGIC It's helpful to look at the file first, so you can check the format with **`dbutils.fs.head()`**.
 
 # COMMAND ----------
 

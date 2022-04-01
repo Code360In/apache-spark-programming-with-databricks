@@ -122,7 +122,7 @@ display(formatted_df)
 # MAGIC %md #### **`year`**
 # MAGIC Extracts the year as an integer from a given date/timestamp/string.
 # MAGIC 
-# MAGIC ##### Similar methods: `month`, `dayofweek`, `minute`, `second`, etc.
+# MAGIC ##### Similar methods: **`month`**, **`dayofweek`**, **`minute`**, **`second`**, etc.
 
 # COMMAND ----------
 

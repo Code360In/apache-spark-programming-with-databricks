@@ -20,10 +20,9 @@
 # MAGIC 6. List and stop all active streams
 # MAGIC 
 # MAGIC ##### Classes
-# MAGIC - <a href="https://spark.apache.org/docs/latest/api/python/pyspark.sql.html?highlight=datastreamreader#pyspark.sql.streaming.DataStreamReader" target="_blank">DataStreamReader</a>
-# MAGIC - <a href="https://spark.apache.org/docs/latest/api/python/pyspark.sql.html?highlight=datastreamwriter#pyspark.sql.streaming.DataStreamWriter" target="_blank">DataStreamWriter</a>
-# MAGIC - <a href="https://spark.apache.org/docs/latest/api/python/pyspark.sql.html?highlight=streamingquery#pyspark.sql.streaming.StreamingQuery" target="_blank">StreamingQuery</a>
-# MAGIC - <a href="https://spark.apache.org/docs/latest/api/python/pyspark.sql.html?highlight=streamingquerymanager#pyspark.sql.streaming.StreamingQueryManager" target="_blank">StreamingQueryManager</a>
+# MAGIC - <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.streaming.DataStreamReader.html#pyspark.sql.streaming.DataStreamReader" target="_blank">DataStreamReader</a>
+# MAGIC - <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.streaming.DataStreamWriter.html#pyspark.sql.streaming.DataStreamWriter" target="_blank">DataStreamWriter</a>
+# MAGIC - <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.streaming.StreamingQuery.html#pyspark.sql.streaming.StreamingQuery" target="_blank">StreamingQuery</a>
 
 # COMMAND ----------
 

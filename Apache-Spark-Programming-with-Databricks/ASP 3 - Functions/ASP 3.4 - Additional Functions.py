@@ -81,21 +81,21 @@ display(gmail_accounts)
 # COMMAND ----------
 
 # MAGIC %md ### Joining DataFrames
-# MAGIC The DataFrame <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.join.html?highlight=join#pyspark.sql.DataFrame.join" target="_blank">**`join`**</a> method joins two DataFrames based on a given join expression. Several different types of joins are supported. For example:
+# MAGIC The DataFrame <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.join.html?highlight=join#pyspark.sql.DataFrame.join" target="_blank">**`join`**</a> method joins two DataFrames based on a given join expression. 
 # MAGIC 
-# MAGIC ```
-# MAGIC # Inner join based on equal values of a shared column called "name" (i.e., an equi join)
-# MAGIC df1.join(df2, "name")
+# MAGIC Several different types of joins are supported:
 # MAGIC 
-# MAGIC # Inner join based on equal values of the shared columns called "name" and "age"
-# MAGIC df1.join(df2, ["name", "age"])
+# MAGIC Inner join based on equal values of a shared column called "name" (i.e., an equi join)<br/>
+# MAGIC **`df1.join(df2, "name")`**
 # MAGIC 
-# MAGIC # Full outer join based on equal values of a shared column called "name"
-# MAGIC df1.join(df2, "name", "outer")
+# MAGIC Inner join based on equal values of the shared columns called "name" and "age"<br/>
+# MAGIC **`df1.join(df2, ["name", "age"])`**
 # MAGIC 
-# MAGIC # Left outer join based on an explicit column expression
-# MAGIC df1.join(df2, df1["customer_name"] == df2["account_name"], "left_outer")
-# MAGIC ```
+# MAGIC Full outer join based on equal values of a shared column called "name"<br/>
+# MAGIC **`df1.join(df2, "name", "outer")`**
+# MAGIC 
+# MAGIC Left outer join based on an explicit column expression<br/>
+# MAGIC **`df1.join(df2, df1["customer_name"] == df2["account_name"], "left_outer")`**
 
 # COMMAND ----------
 

@@ -38,6 +38,7 @@
 # MAGIC * [ASP 3.2 - Datetimes]($./ASP 3 - Functions/ASP 3.2 - Datetimes)
 # MAGIC * [ASP 3.2L - Active Users Lab]($./ASP 3 - Functions/ASP 3.2L - Active Users Lab)
 # MAGIC * [ASP 3.3 - Complex Types]($./ASP 3 - Functions/ASP 3.3 - Complex Types)
+# MAGIC * [ASP 3.3L - Users]($./ASP 3 - Functions/ASP 3.3L - Users)
 # MAGIC * [ASP 3.4 - Additional Functions]($./ASP 3 - Functions/ASP 3.4 - Additional Functions)
 # MAGIC * [ASP 3.4L - Abandoned Carts Lab]($./ASP 3 - Functions/ASP 3.4L - Abandoned Carts Lab)
 # MAGIC * [ASP 3.5 - UDFs]($./ASP 3 - Functions/ASP 3.5 - UDFs)

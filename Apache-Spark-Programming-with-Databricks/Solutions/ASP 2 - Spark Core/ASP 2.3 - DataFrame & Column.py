@@ -228,7 +228,7 @@ display(android_df)
 # MAGIC %md #### **`dropDuplicates()`**
 # MAGIC Returns a new DataFrame with duplicate rows removed, optionally considering only a subset of columns.
 # MAGIC 
-# MAGIC ##### Alias: `distinct`
+# MAGIC ##### Alias: **`distinct`**
 
 # COMMAND ----------
 

@@ -62,7 +62,7 @@ print(sc.defaultParallelism)
 
 # COMMAND ----------
 
-# MAGIC %md #### `repartition`
+# MAGIC %md #### **`repartition`**
 # MAGIC Returns a new DataFrame that has exactly **`n`** partitions.
 # MAGIC 
 # MAGIC - Wide transformation
@@ -79,7 +79,7 @@ repartitioned_df.rdd.getNumPartitions()
 
 # COMMAND ----------
 
-# MAGIC %md #### `coalesce`
+# MAGIC %md #### **`coalesce`**
 # MAGIC Returns a new DataFrame that has exactly **`n`** partitions, when fewer partitions are requested.
 # MAGIC 
 # MAGIC If a larger number of partitions is requested, it will stay at the current number of partitions.
