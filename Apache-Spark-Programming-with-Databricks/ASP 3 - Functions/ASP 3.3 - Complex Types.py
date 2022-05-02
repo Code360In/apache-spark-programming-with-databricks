@@ -17,7 +17,7 @@
 # MAGIC 1. Union DataFrames together
 # MAGIC 
 # MAGIC ##### Methods
-# MAGIC - <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.html" target="_blank">DataFrame</a>: **`unionByName`**
+# MAGIC - <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.html" target="_blank">DataFrame</a>:**`union`**, **`unionByName`**
 # MAGIC - <a href="https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql.html?#functions" target="_blank">Built-In Functions</a>:
 # MAGIC   - Aggregate: **`collect_set`**
 # MAGIC   - Collection: **`array_contains`**, **`element_at`**, **`explode`**
@@ -114,6 +114,33 @@ display(mattress_df)
 size_df = mattress_df.groupBy("email").agg(collect_set("size").alias("size options"))
 
 display(size_df)
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC 
+# MAGIC ##Union and unionByName
+# MAGIC <img src="https://files.training.databricks.com/images/icon_warn_32.png" alt="Warning"> The DataFrame <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.union.html" target="_blank">**`union`**</a> method resolves columns by position, as in standard SQL. You should use it only if the two DataFrames have exactly the same schema, including the column order. In contrast, the DataFrame <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.unionByName.html" target="_blank">**`unionByName`**</a> method resolves columns by name.  This is equivalent to UNION ALL in SQL.  Neither one will remove duplicates.  
+# MAGIC 
+# MAGIC Below is a check to see if the two dataframes have a matching schema where **`union`** would be appropriate
+
+# COMMAND ----------
+
+mattress_df.schema==size_df.schema
+
+# COMMAND ----------
+
+# MAGIC %md 
+# MAGIC If we do get the two schemas to match with a simple **`select`** statement, then we can use a **`union`**
+
+# COMMAND ----------
+
+union_count = mattress_df.select("email").union(size_df.select("email")).count()
+
+mattress_count = mattress_df.count()
+size_count = size_df.count()
+
+mattress_count + size_count == union_count
 
 # COMMAND ----------
 

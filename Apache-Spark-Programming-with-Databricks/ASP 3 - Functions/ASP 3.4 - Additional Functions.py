@@ -16,7 +16,8 @@
 # MAGIC 1. Join DataFrames
 # MAGIC 
 # MAGIC ##### Methods
-# MAGIC - <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrameNaFunctions.html" target="_blank">DataFrameNaFunctions</a>: **`fill`**
+# MAGIC - <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.join.html?highlight=dataframe%20join#pyspark.sql.DataFrame.join" target="_blank">DataFrame Methods </a>: **`join`**
+# MAGIC - <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrameNaFunctions.html" target="_blank">DataFrameNaFunctions</a>: **`fill`**, **`drop`**
 # MAGIC - <a href="https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql.html?#functions" target="_blank">Built-In Functions</a>:
 # MAGIC   - Aggregate: **`collect_set`**
 # MAGIC   - Collection: **`explode`**
@@ -32,29 +33,8 @@ from pyspark.sql.functions import *
 
 # COMMAND ----------
 
-# MAGIC %md ### DataFrameNaFunctions
-# MAGIC <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrameNaFunctions.html" target="_blank">DataFrameNaFunctions</a> is a DataFrame submodule with methods for handling null values. Obtain an instance of DataFrameNaFunctions by accessing the **`na`** attribute of a DataFrame.
-# MAGIC 
-# MAGIC | Method | Description |
-# MAGIC | --- | --- |
-# MAGIC | drop | Returns a new DataFrame omitting rows with any, all, or a specified number of null values, considering an optional subset of columns |
-# MAGIC | fill | Replace null values with the specified value for an optional subset of columns |
-# MAGIC | replace | Returns a new DataFrame replacing a value with another value, considering an optional subset of columns |
-
-# COMMAND ----------
-
 sales_df = spark.read.format("delta").load(sales_path)
 display(sales_df)
-
-# COMMAND ----------
-
-# MAGIC %md Let's say we need to remove the email addresses from our dataset. 
-
-# COMMAND ----------
-
-no_pii_df = sales_df.drop("email")
-
-display(no_pii_df)
 
 # COMMAND ----------
 
@@ -80,6 +60,55 @@ display(gmail_accounts)
 
 # COMMAND ----------
 
+# MAGIC %md **`lit`** can be used to create a column out of a value, which is useful for appending columns.  
+
+# COMMAND ----------
+
+display(gmail_accounts.select("email", lit(True).alias("gmail user")))
+
+# COMMAND ----------
+
+# MAGIC %md ### DataFrameNaFunctions
+# MAGIC <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrameNaFunctions.html" target="_blank">DataFrameNaFunctions</a> is a DataFrame submodule with methods for handling null values. Obtain an instance of DataFrameNaFunctions by accessing the **`na`** attribute of a DataFrame.
+# MAGIC 
+# MAGIC | Method | Description |
+# MAGIC | --- | --- |
+# MAGIC | drop | Returns a new DataFrame omitting rows with any, all, or a specified number of null values, considering an optional subset of columns |
+# MAGIC | fill | Replace null values with the specified value for an optional subset of columns |
+# MAGIC | replace | Returns a new DataFrame replacing a value with another value, considering an optional subset of columns |
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC Here we'll see the row count before and after dropping rows with null/NA values.  
+
+# COMMAND ----------
+
+print(sales_df.count())
+print(sales_df.na.drop().count())
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC Since the row counts are the same, we have the no null columns.  We'll need to explode items to find some nulls in columns such as items.coupon.  
+
+# COMMAND ----------
+
+sales_exploded_df = sales_df.withColumn("items", explode(col("items")))
+display(sales_exploded_df.select("items.coupon"))
+print(sales_exploded_df.select("items.coupon").count())
+print(sales_exploded_df.select("items.coupon").na.drop().count())
+
+# COMMAND ----------
+
+# MAGIC %md We can fill in the missing coupon codes with **`na.fill`**
+
+# COMMAND ----------
+
+display(sales_exploded_df.select("items.coupon").na.fill("NO COUPON"))
+
+# COMMAND ----------
+
 # MAGIC %md ### Joining DataFrames
 # MAGIC The DataFrame <a href="https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.join.html?highlight=join#pyspark.sql.DataFrame.join" target="_blank">**`join`**</a> method joins two DataFrames based on a given join expression. 
 # MAGIC 
@@ -96,6 +125,25 @@ display(gmail_accounts)
 # MAGIC 
 # MAGIC Left outer join based on an explicit column expression<br/>
 # MAGIC **`df1.join(df2, df1["customer_name"] == df2["account_name"], "left_outer")`**
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC We'll load in our users data to join with our gmail_accounts from above.
+
+# COMMAND ----------
+
+users_df = spark.read.format("delta").load(users_path)
+display(users_df)
+
+# COMMAND ----------
+
+joined_df = gmail_accounts.join(other=users_df, on='email', how = "inner")
+display(joined_df)
+
+# COMMAND ----------
+
+classroom_cleanup()
 
 # COMMAND ----------
 

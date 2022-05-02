@@ -48,6 +48,7 @@ display(revenue_df)
 
 # COMMAND ----------
 
+from pyspark.sql.functions import col
 expected1 = [5830.0, 5485.0, 5289.0, 5219.1, 5180.0, 5175.0, 5125.0, 5030.0, 4985.0, 4985.0]
 result1 = [row.revenue for row in revenue_df.sort(col("revenue").desc_nulls_last()).limit(10).collect()]
 

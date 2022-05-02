@@ -36,7 +36,6 @@
 # COMMAND ----------
 
 # MAGIC %md ### 1. Read data stream
-# MAGIC - Use schema stored in **`schema`**
 # MAGIC - Set to process 1 file per trigger
 # MAGIC - Read from Delta with filepath stored in **`events_path`**
 # MAGIC 
